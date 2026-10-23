@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <div>
+        <h1>Sales Analytics Dashboard</h1>
+        <p>Interactive Business Performance Overview</p>
+    </div>
+    <button id="themeButton">🌙 Dark Mode</button>
+</header>
+
+<main class="container">
+
+    <section class="filters">
+        <input type="search" id="searchInput"
+               placeholder="Search month or category...">
+
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+        </select>
+
+        <select id="sortFilter">
+            <option value="default">Default Order</option>
+            <option value="high">Highest Revenue</option>
+            <option value="low">Lowest Revenue</option>
+        </select>
+
+        <button id="resetButton">Reset Filters</button>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <p>Total Revenue</p>
+            <h2 id="totalRevenue">$0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Total Orders</p>
+            <h2 id="totalOrders">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Total Customers</p>
+            <h2 id="totalCustomers">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Top Category</p>
+            <h2 id="topCategory">-</h2>
+        </div>
+    </section>
+
+    <section class="charts">
+        <div class="panel">
+            <h2>Monthly Revenue</h2>
+            <canvas id="monthlyChart"></canvas>
+        </div>
+
+        <div class="panel">
+            <h2>Revenue by Category</h2>
+            <canvas id="categoryChart"></canvas>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Sales Records</h2>
+        <p id="recordCount"></p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Category</th>
+                        <th>Orders</th>
+                        <th>Customers</th>
+                        <th>Revenue</th>
+                    </tr>
+                </thead>
+                <tbody id="salesTable"></tbody>
+            </table>
+        </div>
+
+        <p id="emptyMessage" hidden>No matching records found.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Week 5 Internship Project | Built with HTML, CSS and JavaScript</p>
+    <p>Sample data for educational purposes.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
